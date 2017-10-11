@@ -1,4 +1,4 @@
-# RUV
+# RUV RNA-seq pipeline 0.1
 
 library(RUVSeq)
 library(limma)
@@ -8,12 +8,13 @@ library(Mus.musculus)
 library(RColorBrewer)
 library(pamr)
 
+# Retrieve gene quantification matrix
 files <- list.files("./Multi-omics/featureCounts_pairwise")
-
 x <- readDGE(files, path="./Multi-omics/featureCounts_pairwise", columns=c(1,3))
 class(x)
 dim(x)
 
+# Save R object as output (rda)
 save(x, file="./Multi-omics/raw_rnaseq_subset.rda")
 # save raw matrix into 
 
@@ -21,20 +22,22 @@ samplenames <- substring(colnames(x), 0, 5)
 samplenames
 colnames(x) <- samplenames
 
-gender <- as.factor(rep(c("Male"), c(8)))
-expo <- as.factor(rep(c("FA","PM"), c(4,4)))
-
-x$samples$gender <- gender
-x$samples$expo <- expo
-group <- factor(paste(gender, expo, sep="."))
-
 ## ----filter lowly expressed genes ##
 cpm <- cpm(x)
 table(rowSums(x$counts==0)==8)
 keep.exprs <- rowSums(cpm>1)>=3
 x <- x[keep.exprs,, keep.lib.sizes=FALSE]
 dim(x)
+
+## ----create sample group for DE analysis---- ##
+gender <- as.factor(rep(c("Male"), c(8)))
+expo <- as.factor(rep(c("FA","PM"), c(4,4)))
+
+x$samples$gender <- gender
+x$samples$expo <- expo
+group <- factor(paste(gender, expo, sep="."))
 lcpm <- cpm(x, log=TRUE)
+
 ## ----store_data-------------------------------------------
 expo <- as.factor(rep(c("FA","PM"), c(4,4)))
 set <- newSeqExpressionSet(as.matrix(x),
@@ -96,12 +99,12 @@ morecols <- colorRampPalette(mypalette)
 # Set up colour vector for celltype variable
 #genelist<-which(de[,1] == 1 | de[,1] == -1)
 genelist<-which(de[,1] == 1)
-sub_set2 = lcpm[genelist, 1:8]
-col.cell <- c("blue","red")[sub_set2$samples$expo]
+sub_set = lcpm[genelist, 1:8]
+col.cell <- c("blue","red")[expo]
 col.cell = col.cell[1:8]
 
 # Plot the heatmap
-heatmap.2(sub_set2,col=rev(morecols(50)),trace="none", 
+heatmap.2(sub_set,col=rev(morecols(50)),trace="none", 
           main="Differentially expressed genes",
           ColSideColors=col.cell,scale="row",
           Rowv=TRUE,Colv=TRUE)
