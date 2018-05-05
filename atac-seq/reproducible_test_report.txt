@@ -1,0 +1,79 @@
+#Comparison FA biological replicates
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 step3.3_peakcall_L73_USPD16082020_H2THVCCXY_R1_peaks.narrowPeak
+peak2 step3.3_peakcall_L74_USPD16082021_H2THVCCXY_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 68048
+total score of peak1: 6545873
+Total size of peak1: 19037729
+===========================================
+Total number of peak2: 81110
+total score of peak2: 7952233
+Total size of peak2: 23184640
+===========================================
+Overlap peak(>20%): reproducible 20893
+Overlap peak(>50%): highly reproducible 17307
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 12951
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 11263
+Overlapped position between peak1 and peak2: 6848077
+
+# Comparision FA vs PM
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 step3.3_peakcall_L73_USPD16082020_H2THVCCXY_R1_peaks.narrowPeak
+peak2 step3.3_peakcall_L79_USPD16082026_H2THVCCXY_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 68048
+total score of peak1: 6545873
+Total size of peak1: 19037729
+===========================================
+Total number of peak2: 57047
+total score of peak2: 5017822
+Total size of peak2: 15513049
+===========================================
+Overlap peak(>20%): reproducible 16987
+Overlap peak(>50%): highly reproducible 14828
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 8713
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 8072
+Overlapped position between peak1 and peak2: 5323291
+
+# Comparison PM biological replicates
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 step3.3_peakcall_L79_USPD16082026_H2THVCCXY_R1_peaks.narrowPeak
+peak2 step3.3_peakcall_L80_USPD16082027_H2THVCCXY_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 57047
+total score of peak1: 5017822
+Total size of peak1: 15513049
+===========================================
+Total number of peak2: 57437
+total score of peak2: 4891387
+Total size of peak2: 15619459
+===========================================
+Overlap peak(>20%): reproducible 15418
+Overlap peak(>50%): highly reproducible 13089
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 8720
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 7811
+Overlapped position between peak1 and peak2: 4823843
+
+# Comparison HFD biological replicates
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 step3.3_peakcall_L105_USPD16082028_H3V2NCCXY_R1_peaks.narrowPeak
+peak2 step3.3_peakcall_L106_USPD16082029_H3V2NCCXY_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 56949
+total score of peak1: 4029175
+Total size of peak1: 14234693
+===========================================
+Total number of peak2: 62697
+total score of peak2: 4333046
+Total size of peak2: 15951172
+===========================================
+Overlap peak(>20%): reproducible 10389
+Overlap peak(>50%): highly reproducible 8139
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 4509
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 3846
+Overlapped position between peak1 and peak2: 2981157
