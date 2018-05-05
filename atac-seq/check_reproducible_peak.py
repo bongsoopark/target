@@ -25,6 +25,12 @@ narrowPeak1 = {}
 narrowPeakSize1 = {}
 peak1_score = 0
 f = open(f1, "r")
+# Column1: Chromosome number
+# Column2: Peak start position
+# Column3: Peak end position
+# Column4: Peak score (1-1000)
+# Column5: Peak p-value
+# Column6: Peak q-value
 for line in f:
 	line = line.strip()
 	data = line.split("\t")
