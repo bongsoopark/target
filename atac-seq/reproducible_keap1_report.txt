@@ -1,0 +1,61 @@
+# Comparison two biological replicates (KEAP1 fl/fl Alb-Cre-)
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 KEAP1-R1-TAAGGCGA_ATAGAGAG_USPD16085879-N701-AK1827_R1_peaks.narrowPeak
+peak2 KEAP1-R3-AGGCAGAA_AGAGGATA_USPD16085879-N703-AK1828_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 51651
+total score of peak1: 11420203
+Total size of peak1: 16521590
+===========================================
+Total number of peak2: 41704
+total score of peak2: 7067675
+Total size of peak2: 12175901
+===========================================
+Overlap peak(>20%): reproducible 26965
+Overlap peak(>50%): highly reproducible 25991
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 17598
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 17316
+Overlapped position between peak1 and peak2: 8225839
+
+
+# Comparison two biological replicates (KEAP1 fl/fl Alb-Cre+)
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 KEAP1-R5-GGACTCCT_TCTACTCT_USPD16085879-N705-AK1829_R1_peaks.narrowPeak
+peak2 KEAP1-R6-TAGGCATG_TCTACTCT_USPD16085879-N706-AK1829_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 44054
+total score of peak1: 4423357
+Total size of peak1: 11644397
+===========================================
+Total number of peak2: 61507
+total score of peak2: 8115018
+Total size of peak2: 17711545
+===========================================
+Overlap peak(>20%): reproducible 21111
+Overlap peak(>50%): highly reproducible 17709
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 15282
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 13055
+Overlapped position between peak1 and peak2: 6232843
+
+
+# Comparison between KEAP fl/fl Alb-Cre- vs KEAP fl/fl Alb-Cre+
+===========================================
+peak reproducibility test, developed by Bongsoo Park. Johns Hopkins
+peak1 KEAP1-R1-TAAGGCGA_ATAGAGAG_USPD16085879-N701-AK1827_R1_peaks.narrowPeak
+peak2 KEAP1-R5-GGACTCCT_TCTACTCT_USPD16085879-N705-AK1829_R1_peaks.narrowPeak
+===========================================
+Total number of peak1: 51651
+total score of peak1: 11420203
+Total size of peak1: 16521590
+===========================================
+Total number of peak2: 44054
+total score of peak2: 4423357
+Total size of peak2: 11644397
+===========================================
+Overlap peak(>20%): reproducible 22183
+Overlap peak(>50%): highly reproducible 21124
+Overlap peak(>20%): reproducible hscore (enrichment > 100) 11055
+Overlap peak(>50%): highly reproducible hscore (enrichment > 100) 10874
+Overlapped position between peak1 and peak2: 6480881
