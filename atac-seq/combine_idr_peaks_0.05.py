@@ -20,13 +20,13 @@ f2 = sys.argv[2]
 f3 = sys.argv[3]
 
 # option (merging option)
-f4 = "sum"
+f4 = "mean"
 
 print "==========================================="
 print "combine IDR tested narrowPeaks"
-print "peak12", f1
-print "peak13", f2
-print "peak23", f3
+print "peak1 vs 2", f1
+print "peak2 vs 3", f2
+print "peak3 vs 1", f3
 # narrowPeak1,2,3: save peak information
 # narrowPeakSize1,2,3: save peak position
 narrowPeak = {}
@@ -43,9 +43,7 @@ for line in f:
 		the_key = data[0]+":"+data[1]+"-"+data[2]
 		the_key2 = data[0]+":"+data[16]+"-"+data[17]
 		narrowPeak1.update({the_key:int(data[9])})
-		#Rep1
 		narrowPeak.update({the_key:int(data[9])})
-		#Rep2
 		narrowPeak.update({the_key2:int(data[19])})
 		for i in range(int(data[1]), int(data[2])+1):
 			# Save one nucleotide based peak position
@@ -56,6 +54,7 @@ f.close()
 print "==========================================="
 print "Total number of peak1:", len(narrowPeak1)
 print "Total size of peak1:", len(narrowPeakSize1)
+print "Total number of peaks:", len(narrowPeak)
 print "==========================================="
 
 narrowPeak2 = {}
@@ -70,9 +69,7 @@ for line in f:
 		the_key = data[0]+":"+data[1]+"-"+data[2]
 		the_key2 = data[0]+":"+data[16]+"-"+data[17]
 		narrowPeak2.update({the_key:int(data[9])})
-		#Rep1
 		narrowPeak.update({the_key:int(data[9])})
-		#Rep2
 		narrowPeak.update({the_key2:int(data[19])})
 		for i in range(int(data[1]), int(data[2])+1):
 			# Save one nucleotide based peak position
@@ -82,9 +79,11 @@ for line in f:
 				narrowPeakEveryPosition[the_key] + 1
 			else:
 				narrowPeakEveryPosition.update({the_position:1})
+			
 f.close()
 print "Total number of peak2:", len(narrowPeak2)
 print "Total size of peak2:", len(narrowPeakSize2)
+print "Total number of peaks:", len(narrowPeak)
 print "==========================================="
 
 narrowPeak3 = {}
@@ -99,9 +98,7 @@ for line in f:
 		the_key = data[0]+":"+data[1]+"-"+data[2]
 		the_key2 = data[0]+":"+data[16]+"-"+data[17]
 		narrowPeak3.update({the_key:int(data[9])})
-		#Rep1
 		narrowPeak.update({the_key:int(data[9])})
-		#Rep2
 		narrowPeak.update({the_key2:int(data[19])})
 		for i in range(int(data[1]), int(data[2])+1):
 			# Save one nucleotide based peak position
@@ -114,6 +111,7 @@ for line in f:
 f.close()
 print "Total number of peak3:", len(narrowPeak3)
 print "Total size of peak3:", len(narrowPeakSize3)
+print "Total number of peaks:", len(narrowPeak)
 print "==========================================="
 print "narrowPeak", len(narrowPeak)
 print "narrowPeak EveryPosition", len(narrowPeakEveryPosition)
@@ -125,6 +123,6 @@ for the_key, the_value in sortedPeak:
 	chrom = coor[0]
 	start_pos = coor[1].split("-")[0]
 	end_pos = coor[1].split("-")[1]
-	f.write(chrom+"\t"+start_pos+"\t"+end_pos+"\t"+str(the_value)+"\n")
+	f.write(chrom+"\t"+start_pos+"\t"+end_pos+"\t.\t"+str(the_value)+"\n")
 f.close()
 	
